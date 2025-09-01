@@ -1,0 +1,39 @@
+name: labslaac
+
+topology:
+  nodes:
+  
+    router-cisco:
+      kind: cisco_iol
+      image: docker.io/arthurk99/cisco-iol:17.15.01 
+      #startup-config: config/core/config.partial
+             
+    switch-nokia:
+      kind: nokia_srlinux
+      image: ghcr.io/nokia/srlinux:24.10.1
+      type: ixrd3
+      #startup-config: switch/srlswitch.cfg
+
+    PC1:
+      kind: linux
+      image: docker.io/esanchezv/kaliipv6v2.2:latest
+      exec:
+       - apt -y install t50    
+      
+    PC2:
+      kind: linux
+      image: docker.io/esanchezv/kaliipv6v2.2:latest
+          
+    PC3: 
+      kind: linux # "Alpine Linux v3.12"
+      image: ghcr.io/hellt/network-multitool
+           
+
+  links:
+    - endpoints: ["ciscort:Ethernet0/1","srlswitch:e1-1"]    
+    - endpoints: ["PC1:eth1","srlswitch:e1-2"]
+      mtu: 1500
+    - endpoints: ["PC2:eth1","srlswitch:e1-3"]
+      mtu: 1500
+    - endpoints: ["PC3:eth1","srlswitch:e1-4"]
+      mtu: 1500      
