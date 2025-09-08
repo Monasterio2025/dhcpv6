@@ -30,10 +30,10 @@ topology:
            
 
   links:
-    - endpoints: ["ciscort:Ethernet0/1","srlswitch:e1-1"]    
-    - endpoints: ["PC1:eth1","srlswitch:e1-2"]
+    - endpoints: ["router-cisco:Ethernet0/1","switch-nokia:e1-1"]    
+    - endpoints: ["PC1:eth1","switch-nokia:e1-2"]
       mtu: 1500
-    - endpoints: ["PC2:eth1","srlswitch:e1-3"]
+    - endpoints: ["PC2:eth1","switch-nokia:e1-3"]
       mtu: 1500
-    - endpoints: ["PC3:eth1","srlswitch:e1-4"]
+    - endpoints: ["PC3:eth1","switch-nokia:e1-4"]
       mtu: 1500      
