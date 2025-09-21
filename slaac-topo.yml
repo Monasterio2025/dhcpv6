@@ -15,12 +15,12 @@ topology:
       startup-config: switch/switch.cfg
 
     PC1:
-      kind: linux
-      image: docker.io/esanchezv/kaliipv6v2.2:latest
+      kind: linux # "Alpine Linux v3.12"
+      image: ghcr.io/hellt/network-multitool
             
     PC2:
-      kind: linux
-      image: docker.io/esanchezv/kaliipv6v2.2:latest
+      kind: linux # "Alpine Linux v3.12"
+      image: ghcr.io/hellt/network-multitool
           
     PC3: 
       kind: linux # "Alpine Linux v3.12"
