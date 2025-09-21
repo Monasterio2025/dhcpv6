@@ -17,14 +17,29 @@ topology:
     PC1:
       kind: linux # "Alpine Linux v3.12"
       image: ghcr.io/hellt/network-multitool
+      binds:
+       - configs/dhcp-client.sh:/root/dhcp-client.sh
+      exec:
+       - chmod +x /root/dhcp-client.sh
+       - bash /root/dhcp-client.sh
             
     PC2:
       kind: linux # "Alpine Linux v3.12"
       image: ghcr.io/hellt/network-multitool
+      binds:
+       - configs/dhcp-client.sh:/root/dhcp-client.sh
+      exec:
+       - chmod +x /root/dhcp-client.sh
+       - bash /root/dhcp-client.sh
           
     PC3: 
       kind: linux # "Alpine Linux v3.12"
       image: ghcr.io/hellt/network-multitool
+      binds:
+       - configs/dhcp-client.sh:/root/dhcp-client.sh
+      exec:
+       - chmod +x /root/dhcp-client.sh
+       - bash /root/dhcp-client.sh
            
 
   links:
