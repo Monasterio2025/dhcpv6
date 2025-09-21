@@ -11,7 +11,7 @@ topology:
     switch-nokia:
       kind: nokia_srlinux
       image: ghcr.io/nokia/srlinux:24.10.1
-      type: ixr-d3
+      type: ixrd3
       startup-config: switch/srlswitch.cfg
 
     PC1:
