@@ -1,0 +1,12 @@
+conf t
+ipv6 unicast-routing
+ipv6 dhcp pool STATELESS
+dns-server 2001:db8::1
+domain-name example.com
+exit
+interface e0/1
+ipv6 address 2001:db8:1::1/64
+ipv6 nd other-config-flag
+ipv6 dhcp server STATELESS
+no shutdown
+exit
