@@ -11,15 +11,13 @@ topology:
     switch-nokia:
       kind: nokia_srlinux
       image: ghcr.io/nokia/srlinux:24.10.1
-      type: ixrd3
+      type: ixr-d3
       startup-config: switch/srlswitch.cfg
 
     PC1:
       kind: linux
       image: docker.io/esanchezv/kaliipv6v2.2:latest
-      exec:
-       - apt -y install t50    
-      
+            
     PC2:
       kind: linux
       image: docker.io/esanchezv/kaliipv6v2.2:latest
