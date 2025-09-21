@@ -1,12 +1,14 @@
 conf t
 ipv6 unicast-routing
-ipv6 dhcp pool STATELESS
+ipv6 dhcp pool stateful
+address prefix 2001:db8:2::/64
 dns-server 2001:db8::1
-domain-name example.com
+domain-name lab.local
 exit
 interface e0/1
-ipv6 address 2001:db8:1::1/64
-ipv6 nd other-config-flag
-ipv6 dhcp server STATELESS
+ipv6 address 2001:db8:2::1/64
+ipv6 nd ra suppress
+ipv6 nd managed-config-flag
+ipv6 dhcp server stateful
 no shutdown
 exit
